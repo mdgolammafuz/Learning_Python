@@ -5,7 +5,6 @@ goal = "Learning \nPython"
 # \'
 # \\
 
-
 print(goal)
 
 print(len(goal))
