@@ -88,4 +88,3 @@ print(np.random.randint(1, 100))
 
 # returns ten random int,
 print(np.random.randint(1, 100, 10))
-act
