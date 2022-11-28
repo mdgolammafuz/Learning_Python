@@ -88,3 +88,8 @@ print(np.random.randint(1, 100))
 
 # returns ten random int,
 print(np.random.randint(1, 100, 10))
+
+print(np.arange(1, 7))      # Takes default steps of 1 and doesn't include 7
+print(np.arange(5))     # Starts at 0 by defualt and ends at 4, giving 5 numbers
+print(np.arange(1, 10, 3))      # Starts at 1 and ends at less than 10,
+# with a step size of 3
