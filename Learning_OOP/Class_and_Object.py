@@ -2,7 +2,7 @@
 
 class Rectangle:
 
-    # Conxctructor Method to Instiate Objects using Rectangle Class
+    # Consctructor Method to Instantiate Objects using Rectangle Class
     def __init__(self, length, width, color="red"):
         self.length = length
         self.width = width
@@ -17,8 +17,8 @@ class Rectangle:
 # Instanciation of Reactangle class to create rect object
 rect = Rectangle(5, 3)
 
-rect1 = Rectangle(4, 2, "blue")  # Second Instance of rectangle Object
-rect2 = Rectangle(3, 1, color="pink")
+rect1 = Rectangle(4, 2, "blue")  # Second Instance of Rectangle Class
+rect2 = Rectangle(3, 1, color="pink")  # Third Instance of Rectangle Class
 
 print("Initial object : ", rect)
 print("initial length attribute of the object : ", rect.length)

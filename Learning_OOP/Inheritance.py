@@ -13,7 +13,8 @@ class Cat:
 
 
 class Cheetah(Cat):
-    def vocalize(self):  # Overriding vocalize() method
+    # Overriding vocalize() method, Overriding is when a child class creates a new implementation of an inherited method.
+    def vocalize(self):
         print("Chirrup")
 
 

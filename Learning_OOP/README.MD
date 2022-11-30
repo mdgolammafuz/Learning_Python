@@ -264,3 +264,79 @@ Why use Inheritance?
 
     3) Models
     They allow developers and development teams to build conceptual models of the behaviors and data in the system
+
+
+ ## Fifth : Write a Subclass in Python - Define the Subclassing Syntax
+
+1. Define a child class using  class Child(Parent).
+
+2. By default, all classes inherit from an object - a Python object that provides basic functionality.
+
+3. It’s possible for classes to inherit from multiple parent classes at once - in multiple inheritance.
+
+## Sixth : Override Methods in Python - Understand Overriding
+
+Overriding is when a child class creates a new implementation of an inherited method.
+
+```
+from abc import ABC
+class Shape(ABC):
+    def area(self):
+        return 0
+ 
+class Square(Shape):
+    def __init__(self, length):
+        self.length = length
+ 
+    def area(self):
+        return length * length
+```
+
+## Abstract Classes
+
+So we get that `area()` is overridden, but how can Shape be a class? What’s ABC?
+
+ABC stands for abstract base class. It’s Python’s mechanism for implementing what’s known as an abstract class.
+
+An abstract class can’t be instantiated - the only way to use it is to create a subclass.       
+
+
+## Accessing Parent Methods
+
+While overriding allows you to entirely change inherited behavior, it’s sometimes useful to be able to access the parent’s methods - the ones that have been overridden.
+
+One of the most common places to use this is in constructors. You do it using super() - like this: 
+
+```
+class Sprite:
+    def __init__(self, image):
+        this.image = image
+ 
+    def render(self):
+        pass
+ 
+        class MovingSprite(Sprite):
+    def __init__(self, image, speed):
+        this.speed = speed
+        super().__init__(image)
+ 
+    def move(self):
+        pass
+
+```
+
+In this example, MovingSprite is a subclass of Sprite, which moves an image rather than just rendering it in one place. All of the setup for the image and rendering part of the Sprite is done in the Sprite’s constructor, so MovingSprite calls the constructor after it’s done handling the  speed  parameter.
+
+Couldn’t we just set  `this.image = image`  in MovingSprite’s constructor instead?
+
+You could, but that solution doesn’t scale. Imagine if Sprite’s constructor did other operations to the image (like calculating its height and width) or imagine if MovingSprite got subclassed even further.
+
+The `super()` approach allows you to reuse code rather than copying it, and ensures that functionality is grouped logically - two of the main benefits of object-oriented programming!
+
+1. It’s possible for a child class to provide its own implementation for something it inherited from its parent.
+
+2. The child’s implementation takes priority over the parent’s - it overrides the parent’s implementation.
+
+3. Wou can use the super method to access methods in the parent class you’ve overridden.
+
+4. An abstract class is a class that can’t be instantiated - it must be inherited from instead.
