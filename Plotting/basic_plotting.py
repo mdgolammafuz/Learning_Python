@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np  # importing numpy
 x = np.arange(11)  # using arange to create array "x"
 y = x ** 2  # computing square of "x"
-print("original array is:          ", x)  # a normal print statement
+print("original array is:", x)  # a normal print statement
 print("Square of original array is:", y)  # a normal print statement
 plt.plot(x, y)
 # We can add labels and title
