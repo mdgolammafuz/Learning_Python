@@ -1,6 +1,5 @@
 # Thinking like a Computer : The logic of object oriented programming
 
-
 # First : Understanding Objects 
 
 ## Understanding objects in object oriented programing :
@@ -292,7 +291,7 @@ class Square(Shape):
         return length * length
 ```
 
-## Abstract Classes
+### Abstract Classes
 
 So we get that `area()` is overridden, but how can Shape be a class? What’s ABC?
 
@@ -301,7 +300,7 @@ ABC stands for abstract base class. It’s Python’s mechanism for implementing
 An abstract class can’t be instantiated - the only way to use it is to create a subclass.       
 
 
-## Accessing Parent Methods
+### Accessing Parent Methods
 
 While overriding allows you to entirely change inherited behavior, it’s sometimes useful to be able to access the parent’s methods - the ones that have been overridden.
 
@@ -340,3 +339,87 @@ The `super()` approach allows you to reuse code rather than copying it, and ensu
 3. Wou can use the super method to access methods in the parent class you’ve overridden.
 
 4. An abstract class is a class that can’t be instantiated - it must be inherited from instead.
+
+
+## Use Inheritance Hierarchies and Multiple Inheritance in Python
+
+Multiple inheritance is more often than not an incorrect solution to your problem, but there are still some situations when it is still the best available.
+
+Multiple inheritance involves one class having multiple parent classes. In an inheritance hierarchy, you have multiple levels of inheritance - where a class has a parent that has a parent.
+
+Multiple inheritance has a bad reputation in object-oriented programming spaces - systems using it can be difficult to understand. Not only that, but some programming languages don’t implement it well, which causes problems.
+
+Multiple inheritance is more often than not an incorrect solution to your problem, but there are still some situations when it is still the best available. In any case, you might run into multiple inheritance in the workplace, so we’ll cover it here.
+
+```
+Here’s an example:
+
+class Cat:
+    def meow(self):
+        print(“Meow!”)
+ 
+class Talker:
+    def say(self, to_say):
+        print(tosay)
+ 
+class TalkingCat(Cat, Talker):
+    pass
+ 
+salem = TalkingCat()
+salem.meow()
+salem.say(“Hello!”)
+```
+Here you have a Cat class and a Talker class, both of which our TalkingCat class inherits from. That means that a TalkingCat, like our Salem here, can both meow and say things!
+
+The pattern used here is often called a Mixin - because you “mix in” some required functionality. If you’ve programmed in other languages, you might be familiar with interfaces, traits, or typeclasses - which are similar but different concepts.
+
+Wait, what happens if two parent classes implement the same method? Which one wins?
+
+This is one of the main problems with multiple inheritance - called the diamond problem (or deadly diamond of death). Each language that uses multiple inheritance has a different solution - Python’s is called the MRO or Method Resolution Order.
+
+Simply put, the MRO of a class is the order of places Python will look for a method definition. It can get quite complicated - and if you’re interested in more details, you can find them in the Python documentation.
+
+Generally speaking, though, Python will look in the left-most parent class first. So in the TalkingCat example above, Python will look in Cat first, then Talker.
+
+Apply Multiple Levels of Inheritance to a Python Program to solve the following problem :
+
+Let’s assume that an image can either be a GIF or a JPG. Implement these subclasses of Image, then override the display method in each to also include a reference to what type it is.
+
+## Problem :
+
+It's the year 2000. You're working for a mobile phone company and have been tasked with modeling out the software for a cutting-edge phone that will have a built-in camera: a camera phone.
+
+Create a class called Camera and a class called MobilePhone that will be the base classes of a derived class called CameraPhone. The CameraPhone class should be initialized with the memory attribute and should have a take_picture() method that prints out the message, Say cheese!.
+
+The steps are as follows:
+
+1. Create a Camera class with a take_picture() method that prints the message, "Say cheese!".
+
+2. Create a MobilePhone class that will be initialized with a memory attribute.
+
+3. Create a CameraPhone class that inherits from both the MobilePhone and Camera classes.
+
+At the bottom of the script we have initialized an instance of the CameraPhone class and passed it the value "200KB". Then we call the take_picture() method and also print out the memory attribute.
+
+## Using Collection of Objects - Lists and Dictionaries
+
+1. You can store objects in collections - just like you can anything else.
+
+2. The way Python deals with types is known as duck typing - if it looks like a duck and it quacks like a duck, it’s probably a duck.
+
+3. When using collections, try not to access an object's attributes that it doesn't have. There are a variety of ways you can do that.
+
+## Quiz:
+
+Which of the following lines of code would allow you to call a parent class’s constructor from the child’s?
+
+
+1. ParentClass()
+
+2. ParentClass.__init__()
+
+3. super()
+
+4. super().__init__() # Right choice
+
+## Objects are mutable because you can change their state.

@@ -14,6 +14,7 @@ Instantiate a nail, then hammer it in using the hammer. Print the nail before an
 
 
 class Screw:
+
     MAX_TIGHTNESS = 5
 
     def __init__(self):

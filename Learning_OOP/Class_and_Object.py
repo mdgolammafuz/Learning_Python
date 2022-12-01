@@ -10,14 +10,14 @@ class Rectangle:
 
     # calculate_area method to calculate the the areea of Objects created using Rectangle Class
     def calculate_area(self):
-
         return self.width * self.width
 
 
 # Instanciation of Reactangle class to create rect object
 rect = Rectangle(5, 3)
 
-rect1 = Rectangle(4, 2, "blue")  # Second Instance of Rectangle Class
+# type: ignore # Second Instance of Rectangle Class
+rect1 = Rectangle(4, 2, "blue")
 rect2 = Rectangle(3, 1, color="pink")  # Third Instance of Rectangle Class
 
 print("Initial object : ", rect)

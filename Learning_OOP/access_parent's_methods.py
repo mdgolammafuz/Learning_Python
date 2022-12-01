@@ -1,4 +1,4 @@
-class Sprite:
+class Sprite:  # parent class
 
     def __init__(self, image):
 
@@ -9,7 +9,7 @@ class Sprite:
         pass
 
 
-class MovingSprite(Sprite):
+class MovingSprite(Sprite):  # child class
 
     def __init__(self, image, speed):
 
